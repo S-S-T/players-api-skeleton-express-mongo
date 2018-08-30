@@ -1,31 +1,35 @@
 /* SST */
 const mongoose = require('mongoose');
-const userID = extractuserID();
+const playerID = new extractPlayerID();
 
-const UserSchema = new mongoose.Schema({
+const PlayerSchema = new mongoose.Schema({
   first_name: {
-    type: String,
-    required: true
-  },
-  last_name: {
-    type: String,
-    required: true
-  },
-  email: {
     type: String,
     unique: true,
     required: true
   },
-  password: {
+  last_name: {
+    type: String,
+    unique: true,
+    required: true
+  },
+  rating: {
     type: String,
     required: true
+  },
+  handedness: {
+    type: String,
+    required: true
+  },
+  created_by: {
+    type: String
   }
-}, userID);
-mongoose.model('User', UserSchema);
-module.exports = mongoose.model('User');
+}, playerID);
+mongoose.model('Player', PlayerSchema);
+module.exports = mongoose.model('Player');
 
 // Auto generated ID used for other functionality
-function extractuserID() {
+function extractPlayerID() {
   return {
     toJSON: {
       transform: function(doc, ret) {
@@ -37,4 +41,3 @@ function extractuserID() {
     }
   };
 }
-

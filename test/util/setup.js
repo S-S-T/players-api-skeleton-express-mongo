@@ -1,7 +1,5 @@
-/**
- * Setup test environment
- */
-
+/* SST */
+/* Setup test environment */
 const chai = require('chai');
 const sinon = require('sinon');
 const sinonChai = require('sinon-chai');

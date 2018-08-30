@@ -1,10 +1,10 @@
+/* SST */
 const _ = require('lodash');
 const server = require('../../src/server');
-const { User } = require('../../src/models');
+const User = require('../../src/models/User');
 const data = require('../util/data');
 
 describe('User API', () => {
-
   describe('POST /api/user', () => {
     beforeEach(async () => {
       await User.remove({});
