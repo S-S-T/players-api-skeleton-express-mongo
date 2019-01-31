@@ -109,7 +109,11 @@
 							"name": "X-Powered-By",
 							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
 						}
+<<<<<<< HEAD
 					]  ,
+=======
+					],
+>>>>>>> 63dda4abcdc26ff2ed08bacb187fd730929d7281
 					"cookie": [
 						{
 							"expires": "Mon Jan 18 2038 22:14:07 GMT-0500 (EST)",

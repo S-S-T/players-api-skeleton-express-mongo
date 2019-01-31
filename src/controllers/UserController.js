@@ -23,7 +23,11 @@ router.post('/', function(req, res) {
   User.create({first_name: req.body.first_name, last_name: req.body.last_name, email: req.body.email, password: hashedPassword},
     function(err, user) {
       if (err) return res.status(409).send('There was a problem adding a new user');
+<<<<<<< HEAD
       // const token1 = jwt.sign(doc.toObject(), jwtSecret);// SST additive...
+=======
+
+>>>>>>> 63dda4abcdc26ff2ed08bacb187fd730929d7281
       const token = jwt.sign({
         id: user._id
       }, process.env.JWT_SECRET, {

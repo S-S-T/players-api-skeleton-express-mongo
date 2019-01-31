@@ -2,6 +2,7 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const dotenv = require('dotenv');
+<<<<<<< HEAD
 
 dotenv.config();
 // const port = 3000;
@@ -38,6 +39,11 @@ http.request(options, function(response, error){
 }).end(); */
 /////////////////////////////////////////////////////////////////
 
+=======
+dotenv.config();
+
+const port = 3000;
+>>>>>>> 63dda4abcdc26ff2ed08bacb187fd730929d7281
 const express = require('express');
 const app = express();
 
@@ -53,9 +59,16 @@ app.use('/api', UserController);
 const PlayerController = require('./controllers/PlayerController');
 app.use('/api/players', PlayerController);
 	
+<<<<<<< HEAD
 const port = dotenv.port || 3000;
 const server = app.listen(port, function() {
   console.log('Express server listening on port ' + port);
 }); 
+=======
+//const port = process.env.port || 3000;
+const server = app.listen(port, function() {
+  console.log('Express server listening on port ' + port);
+});
+>>>>>>> 63dda4abcdc26ff2ed08bacb187fd730929d7281
 
 module.exports = server;

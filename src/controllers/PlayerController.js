@@ -7,9 +7,14 @@ router.use(bodyParser.urlencoded({
 }));
 router.use(bodyParser.json());
 
+<<<<<<< HEAD
 //const jwt = require('jsonwebtoken');
 const Player = require('../models/Player');
 const User = require('../models/User');
+=======
+const jwt = require('jsonwebtoken');
+const Player = require('../models/Player');
+>>>>>>> 63dda4abcdc26ff2ed08bacb187fd730929d7281
 
 //Creates Player with a bearer token
 router.post('/', validateBearerToken, function(req, res) {
@@ -26,7 +31,11 @@ function validateBearerToken(req, res, next) {
   let bearerToken;
   let bearerHeader = req.headers.authorization || req.headers['x-access-token'];
   if (typeof bearerHeader !== 'undefined') {
+<<<<<<< HEAD
     let bearer = bearerHeader.split('');
+=======
+    let bearer = bearerHeader.split('Bearer ');
+>>>>>>> 63dda4abcdc26ff2ed08bacb187fd730929d7281
     bearerToken = bearer[1];
     req.token = bearerToken;
     next();
@@ -43,8 +52,12 @@ function getUserFromBearerToken(token) {
 //Gets players scoped to user
 router.get('/', validateBearerToken, function(req, res) {
   Player.find({
+<<<<<<< HEAD
     created_by: User.userID
 	//created_by: getUserFromBearerToken(req.token)
+=======
+    created_by: getUserFromBearerToken(req.token)
+>>>>>>> 63dda4abcdc26ff2ed08bacb187fd730929d7281
   }, function(err, players) {
     if (err) return res.status(409).send('There was a problem finding the players.');
     res.status(200).send({

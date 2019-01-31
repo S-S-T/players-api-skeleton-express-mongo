@@ -214,7 +214,11 @@ Delete player from the system.
 curl -XDELETE \
   -H 'Authorization: Bearer <my_jwt_token>' \
   http://localhost:3000/api/players/1
+<<<<<<< HEAD
 ```
 ### Environment Variables
  | DB Connection | MONGOLAB_URI
 | JWT_SECRET |  Secret key
+=======
+```
+>>>>>>> 63dda4abcdc26ff2ed08bacb187fd730929d7281
