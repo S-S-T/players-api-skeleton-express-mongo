@@ -1,4 +1,4 @@
-
+/* SST */
 module.exports = {
   email: 'jim@bob.com',
   password: 'foobar123',
